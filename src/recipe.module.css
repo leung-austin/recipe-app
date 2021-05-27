@@ -1,0 +1,59 @@
+.recipe {
+  border-radius: 10px;
+  box-shadow: 0px 5px 20px rgb(70, 70, 70);
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: white;
+  align-items: center;
+  min-width: 40%;
+}
+
+.image {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 300px;
+  grid-template-rows: 210px 210px 80px;
+  grid-template-areas: "image" "text" "stats";
+
+  font-family: roboto;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  text-align: center;
+}
+
+.card-image {
+  grid-area: image;
+  border-radius: 50%;
+  background-size: cover;
+}
+
+.card_text {
+  grid-area: text;
+  margin: 25px;
+}
+.card_text p {
+  color: rgb(255, 7, 110);
+  font-size: 13px;
+}
+.card_text ul {
+  color: grey;
+  font-size: 15px;
+  font-weight: 300;
+}
+.card_text h1 {
+  margin-top: 0px;
+  font-size: 28px;
+}
+
+.card_stats {
+  grid-area: stats;
+  color: yellow;
+}

@@ -13,10 +13,10 @@ function App() {
 
 
   const slideImages = [
-    'food12.jpg',
-    'lilybanse.jpg',
-    'brooke.jpg',
-    'melissa.jpg'
+    'images/food12.jpg',
+    'images/lilybanse.jpg',
+    'images/brooke.jpg',
+    'images/melissa.jpg'
   ];
   const delay = 2500;
   const [index, setIndex] = useState(0);

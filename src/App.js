@@ -13,10 +13,11 @@ function App() {
 
 
   const slideImages = [
-    'images/food12.jpg',
-    'images/lilybanse.jpg',
-    'images/brooke.jpg',
-    'images/melissa.jpg'
+    'images/rachel-park-hrlvr2ZlUNk-unsplash.jpg',
+    'images/spencer-davis-mM7PZdI8Zjo-unsplash.jpg',
+    'images/melissa.jpg',
+    'images/rumman-amin-LNn6O_Mt730-unsplash.jpg',
+    'images/cupcake.jpg'
   ];
   const delay = 2500;
   const [index, setIndex] = useState(0);
@@ -73,12 +74,24 @@ function App() {
   return (
     <div className="App">
 
-      {home===0 && 
+      <div className="Home">
+        <div className="navbar">
+            <img 
+              src="icon.svg" 
+              className="logo"
+              onClick={() => {
+                setHome(0);
+                setSearch('');
+                setQuery('');
+              }}
+            />
+        </div>
+      </div>
+      {home===0 &&
         <div className="Home">
-          <div className="navbar">
-            <img src="icon.svg" className="logo"/>
-          </div>
-          <h1>Recipe Finder</h1>
+            <div className="title">
+              <h1>Recipe Buddy</h1>
+            </div>
         </div>
       }
 
@@ -97,7 +110,7 @@ function App() {
             style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
           >
             {slideImages.map((backgroundImage, index) => (
-                <img className="slide" key={index} src={backgroundImage} alt="image" />
+                <img className="slide" key={index} src={backgroundImage}/>
             ))}
           </div>
           
@@ -120,7 +133,7 @@ function App() {
       <div className="recipes">
         {recipes.slice(0,7).map((recipe,index) => (
           <Recipe
-            key={recipe.recipe.label}
+            key={index}
             title={recipe.recipe.label}
             time={recipe.recipe.totalTime} 
             calories={Number((recipe.recipe.calories).toFixed(0))} 

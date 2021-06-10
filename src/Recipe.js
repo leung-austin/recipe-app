@@ -1,16 +1,13 @@
 import React from "react";
-import style from "./recipe.module.css";
-
 
 const getColor = e => {
-    console.log(e.id)
     if (e.id === 0) {
-        return 'rgb(255, 7, 110)'
+        return '#99CED3'
     }
     else if (e.id === 1) {
-        return 'rgb(255, 77, 7)'
+        return '#edb5bf'
     } else {
-        return 'rgb(39, 151, 48)'
+        return '#86B3D1'
     }
 }
 
@@ -26,8 +23,8 @@ const Recipe = ({title,time,calories,image,ingredients,url,cuisine,serving, id})
                 }
                 <h1>{title}</h1>
                 <ul>
-                    {ingredients.slice(0,5).map(ingredient => (
-                        <li>{ingredient.text}</li>
+                    {ingredients.slice(0,5).map((ingredient, index) => (
+                        <li key={index}>{ingredient.text}</li>
                     ))}
                 </ul>
             </div>
